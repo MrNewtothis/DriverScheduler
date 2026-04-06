@@ -71,9 +71,31 @@ $opts = ['Poor','Fair','Good','Excellent'];
     input[type="radio"]::-webkit-radio-inner-circle {
         background-color: #000 !important;
     }
-    /* For Firefox */
-    input[type="radio"]:checked {
+    /* For Firefox */    input[type="radio"]:checked {
         background-color: #000 !important;
+    }
+    /* Responsive table wrapper */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .table-responsive table {
+        min-width: 700px;
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+    }
+    @media (max-width: 900px) {
+        .table-responsive table {
+            min-width: 900px;
+        }
+    }
+    @media (max-width: 600px) {
+        .table-responsive table {
+            min-width: 1000px;
+        }
     }
     @media print {
         html, body {
@@ -178,7 +200,7 @@ $opts = ['Poor','Fair','Good','Excellent'];
                 </tr>
             </table>
         </center>
-        <!-- <div class="perf-title" style="text-align:center;font-weight:700;font-size:1.25em;margin-bottom:8px;">DRIVER'S PERFORMANCE EVALUATION <br><span style="font-size: 0.4em; color:rgb(0, 0, 0);">(To be submitted to the <b>Chief, Engineering and operation Division-PIMO</b> after completion of travel)</span></div> -->
+        <!-- <div class="perf-title" style="text-align:center;font-weight:700;font-size:1.25em;margin-bottom:8px;">DRIVER'S PERFORMANCE EVALUATION <br><span style="font-size: 0.4em; color:rgb(0, 0, 0);">(To be submitted to the <b>Chief, Engineering and operation Division-PIMO</b> after completion of travel)</span></div> -->        <div class="table-responsive">
         <table class="perf-table" style="width:100%;margin-bottom:14px;border-collapse:collapse;">
             
             <tr><td style="font-weight:600;width:180px;padding:8px 10px;">Name of Driver:</td><td style="padding:8px 10px;"><?= esc($eval['driver_name']) ?></td><td></td><td></td><td style="font-weight:600;width:80px;padding:8px 10px;">Date</td><td style="padding:8px 10px;"><?= esc(date('M d, Y', strtotime($eval['date'])) ) ?></td></tr>
@@ -187,6 +209,7 @@ $opts = ['Poor','Fair','Good','Excellent'];
             <tr><td style="font-weight:600;padding:8px 10px;">Purpose of Travel</td><td style="padding:8px 10px;"><?= esc($eval['purpose_of_travel']) ?></td></tr>
             <tr><td style="font-weight:600;padding:8px 10px;">Duration of Travel</td><td style="padding:8px 10px;"><?= esc($eval['duration_of_travel']) ?></td></tr>
         </table>
+        </div>        <div class="table-responsive">
         <table class="perf-table" style="width:100%;margin-bottom:14px;border-collapse:collapse;">
             <tr style="background:#f1f5f9;"><th style="padding:8px 10px;">PARTICULARS</th><th style="padding:8px 10px;">Poor</th><th style="padding:8px 10px;">Fair</th><th style="padding:8px 10px;">Good</th><th style="padding:8px 10px;">Excellent</th><th style="padding:8px 10px;">REMARKS</th></tr>
             <?php for ($i=1; $i<=8; $i++): ?>
@@ -199,6 +222,7 @@ $opts = ['Poor','Fair','Good','Excellent'];
             </tr>
             <?php endfor; ?>
         </table>
+        </div>
         <div style="margin:16px 0 0 0;"><b>Comments & Observations:</b><br><textarea rows="2" readonly style="width:100%;resize:none;background:#f1f5f9;border:1px solid #cbd5e1;min-height:38px;"><?= esc($eval['comments']) ?></textarea></div>
         <div style="margin:24px 0 0 0;">
             <table style="width:100%;border-collapse:collapse;border:none;" class="no-border">
