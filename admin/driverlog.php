@@ -226,11 +226,43 @@ if ($search !== '' || (isset($_GET['status_filter']) && $_GET['status_filter'] !
         }
         .dashboard-table-wrapper {
             width: 100%;
-            overflow-x: auto;
+            overflow-x: auto !important;
             padding-left: max(12px, env(safe-area-inset-left));
             padding-right: max(12px, env(safe-area-inset-right));
             box-sizing: border-box;
             margin-bottom: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f5f9;
+            min-width: 0;
+        }
+        .dashboard-table {
+            min-width: 1400px;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            background: #fff;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar {
+            height: 10px;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar {
+            height: 10px;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .dashboard-table-wrapper::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
         }
         @media (max-width: 900px) {
             .dashboard-table-wrapper {
@@ -249,9 +281,8 @@ if ($search !== '' || (isset($_GET['status_filter']) && $_GET['status_filter'] !
                 padding-left: max(2vw, env(safe-area-inset-left));
                 padding-right: max(2vw, env(safe-area-inset-right));
             }
-        }
-        .dashboard-table {
-            min-width: 950px;
+        }        .dashboard-table {
+            min-width: 1500px;
             border-collapse: separate;
             border-spacing: 0;
             width: 100%;
@@ -547,7 +578,7 @@ if ($search !== '' || (isset($_GET['status_filter']) && $_GET['status_filter'] !
                 </div>
             </div>
             <div class="dashboard-table-wrapper" id="driver-table-wrapper" style="overflow-x:auto;">
-                <table class="dashboard-table" style="min-width:950px; border-collapse:separate; border-spacing:0;">
+                <table class="dashboard-table" style="min-width:1500px; border-collapse:separate; border-spacing:0;">
                     <thead>
                         <tr>
                             <th style="min-width:140px;">Driver Name</th>
@@ -556,7 +587,7 @@ if ($search !== '' || (isset($_GET['status_filter']) && $_GET['status_filter'] !
                             <th style="min-width:120px;">License Plate</th>
                             <th style="min-width:120px;">Travel Log</th>
                             <th style="min-width:110px;">Status</th>
-                            <th style="min-width:120px;">Actions</th>
+                            <th style="min-width:300px; white-space:nowrap;">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="driver-table-body">
@@ -664,17 +695,18 @@ if ($search !== '' || (isset($_GET['status_filter']) && $_GET['status_filter'] !
                                         <?= ucfirst($drv['status']) ?>
                                     </span>
                                 </td>
-                                <td style="padding:10px 8px; text-align:center; min-width:120px; vertical-align:middle;">
-                                    <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
-                                        <input type="hidden" name="driver_id" value="<?= htmlspecialchars($drv['id']) ?>">
-                                        <select name="status" class="main-input" style="padding:4px 8px; min-width:90px; height:34px;">
-                                            <option value="Available" <?= $drv['status']==='Available'?'selected':'' ?>>Available</option>
-                                            <option value="On Trip" <?= $drv['status']==='On Trip'?'selected':'' ?>>Occupied</option>
-                                            <option value="Inactive" <?= $drv['status']==='Inactive'?'selected':'' ?>>Unavailable</option>
-                                        </select>
-                                        <button type="submit" class="main-btn main-btn--primary" style="padding:4px 12px; height:34px; white-space:nowrap;">Save</button>
-                                    </div>
-                                </td>
+                                <td style="padding:10px 8px; text-align:center; min-width:180px; vertical-align:middle;">
+    <form method="post" action="" style="margin:0; padding:0;">
+        <input type="hidden" name="driver_id" value="<?= htmlspecialchars($drv['id']) ?>">
+        <select name="status" class="main-input" style="padding:4px 8px; min-width:120px; width:100%; height:38px; margin-bottom:8px;">
+            <option value="Available" <?= $drv['status']==='Available'?'selected':'' ?>>Available</option>
+            <option value="On Trip" <?= $drv['status']==='On Trip'?'selected':'' ?>>Occupied</option>
+            <option value="Inactive" <?= $drv['status']==='Inactive'?'selected':'' ?>>Unavailable</option>
+        </select>
+        <br>
+        <button type="submit" class="main-btn main-btn--primary" style="padding:8px 22px; height:38px; min-width:100px; font-size:1em; width:100%;">Save</button>
+    </form>
+</td>
                             </tr>
                             </form>
                         <?php endforeach; ?>
