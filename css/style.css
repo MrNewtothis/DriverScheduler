@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.request-table {
+  width: 600px;
+  border-collapse: collapse;
+}
+
+.request-table th,
+.request-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.label {
+  width: 200px;
+}
+
+.textarea-cell {
+  height: 120px;
+}
+
+textarea {
+  width: stretch;
+  height: 100%;
+  resize: none;
+  box-sizing: border-box;
+}
+
+td textarea {
+  width: stretch;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+}

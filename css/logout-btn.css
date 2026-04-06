@@ -1,0 +1,33 @@
+.logout-btn-wrapper {
+  width: 100%;
+  margin-top: 0.7rem; /* Match the .profile-modal-btn margin-top */
+  display: flex;
+  justify-content: center;
+}
+.logout-btn-custom {
+  background: #dc2626 !important;
+  color: #fff !important;
+  border: 2px solid #dc2626 !important;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.logout-btn-custom:hover {
+  background: #b91c1c !important;
+  color: #fff !important;
+}
+.logout-btn-custom svg path {
+  stroke: #fff;
+  transition: stroke 0.2s;
+}
+.logout-btn-custom:hover svg path {
+  stroke: #fff;
+}

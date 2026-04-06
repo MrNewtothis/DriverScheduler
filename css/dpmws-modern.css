@@ -1,0 +1,104 @@
+/* Modern, simple, clean style for DPMWS form */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  background: #f8fafc;
+  color: #222;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+th,
+td {
+  border: none;
+  padding: 10px 8px;
+  vertical-align: middle;
+}
+th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.1em;
+}
+tr:not(:last-child) td {
+  border-bottom: 1px solid #e5e7eb;
+}
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 1em;
+  background: #f9fafb;
+  transition: border 0.2s;
+  margin: 2px 0;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  border: 1.5px solid #38bdf8;
+  background: #fff;
+  outline: none;
+}
+textarea {
+  min-height: 36px;
+  resize: vertical;
+}
+input[type="checkbox"] {
+  accent-color: #22c55e;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+button[type="submit"] {
+  padding: 12px 40px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #16a34a 60%, #22c55e 100%);
+}
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+tr:hover td {
+  background: #e0f2fe;
+}
+label {
+  font-weight: 500;
+  color: #334155;
+  margin-right: 10px;
+}
+.center {
+  text-align: center;
+}
+@media (max-width: 900px) {
+  table,
+  tr,
+  td,
+  th {
+    font-size: 13px;
+  }
+  input,
+  textarea,
+  button {
+    font-size: 0.95em;
+  }
+}

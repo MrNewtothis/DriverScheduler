@@ -1,0 +1,66 @@
+/* dashboard-calendar-layout.css */
+
+.dashboard-calendar-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.dashboard-calendar-flex .calendar-box {
+  flex: 1 1 420px;
+  min-width: 340px;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+  padding: 18px 12px 12px 24px; /* Increased left padding for margin */
+  margin-bottom: 0;
+  margin-left: 18px; /* Add margin to left */
+  order: 1;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.dashboard-calendar-flex .dashboard-card {
+  /* flex: 1 1 420px; */
+  min-width: 340px;
+  /* max-width: 520px; */
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 18px; /* Add right margin for separation */
+  margin-top: 0;
+  align-self: flex-start;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.1);
+  padding: 32px 24px;
+  width: 1000px;
+  overflow-x: visible;
+  overflow-y: visible;
+  border: 1.5px solid #e5e7eb;
+  word-break: normal;
+  overflow-wrap: normal;
+  order: 2;
+}
+
+@media (max-width: 900px) {
+  .dashboard-calendar-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .dashboard-calendar-flex .calendar-box,
+  .dashboard-calendar-flex .dashboard-card {
+    max-width: 98vw;
+    min-width: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

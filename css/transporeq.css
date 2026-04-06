@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+.request-table {
+  background: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 18px;
+  padding: 32px 24px;
+  margin-top: 48px;
+  width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.request-table th {
+  background: none;
+  color: #1e293b;
+  font-size: 1.7em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-bottom: 18px;
+}
+.request-table td,
+.request-table th {
+  border: none;
+  padding: 12px 10px;
+}
+.request-table input[type="text"],
+.request-table input[type="datetime-local"],
+.request-table input[type="time"],
+.request-table textarea {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 1em;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background: #f1f5f9;
+  color: #334155;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.request-table input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 1em;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background: #f1f5f9;
+  color: #334155;
+  /* width: 100%; */
+  box-sizing: border-box;
+}
+.request-table textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+.request-table .label {
+  color: #334155;
+  font-weight: 500;
+  width: 200px;
+}
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+.certify-text {
+  font-size: 1.05em;
+  color: #334155;
+  margin-bottom: 10px;
+}
+.certify-text input[name="vehicle"] {
+  width: 120px;
+  display: inline-block;
+}
+.certify-text input[name="driver"] {
+  width: 180px;
+  display: inline-block;
+}
+.submit-btn {
+  padding: 12px 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #6366f1 0%, #2563eb 100%);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 18px;
+}
+.submit-btn:hover {
+  background: linear-gradient(90deg, #4f46e5 0%, #1d4ed8 100%);
+}
+.popup-success {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background: #22c55e;
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.18);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+.popup-success.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.popup-conflict {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background: #ef4444;
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.18);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+.popup-conflict.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .request-table {
+    width: 98vw;
+    padding: 10px;
+  }
+}
