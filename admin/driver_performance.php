@@ -276,8 +276,8 @@ try {
                 <!-- <button type="button" id="printAllReviewsBtn" class="main-btn main-btn--secondary" style="height:38px; min-width:140px; font-size:1em; margin-left:12px;">Print All Reviews</button> -->
             </form>
         </div>
-        <div class="dashboard-table-wrapper">
-            <table class="dashboard-table" style="width:100%; border-collapse:collapse;">
+        <div class="dashboard-table-wrapper" style="overflow-x:auto; width:100%;">
+            <table class="dashboard-table" style="width:100%; min-width:1100px; border-collapse:collapse;">
                 <thead style="background:#f1f5f9;">
                     <tr>
                         <th>Date</th>
